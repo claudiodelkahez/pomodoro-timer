@@ -2,8 +2,51 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 html {
     font-size: 62.5%;
+}
+body {
+    background-color: #ddd;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    padding-top: 50px;
+    font-size: 6rem;
+}
+.timer {
+    margin-top: 50px;
+    display: inline-block;
+    padding: 24px 32px;
+    border-radius: 16px;
+    background: #fff;
+}
+
+.timer__part {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.timer__btn {
+    width: 45px;
+    height: 45px;
+
+    margin-left: 32px;
+    border-radius: 50%;
+    border: none;
+    background-color: #8208e6;
+    cursor: pointer;
+}
+
+.timer__btn--start {
+    background: #00b84c;
+}
+.timer__btn--stop {
+    background: #ff0256;
 }
