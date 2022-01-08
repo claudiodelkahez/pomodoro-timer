@@ -9,8 +9,42 @@ export default class Timer {
             reset: root.querySelector(".timer__btn--reset"),
         };
 
-        console.log(this.el);
+        this.interval = null;
+        this.remainingSeconds = 90;
+
+        this.updateInterfaceControl();
+
+        this.el.control.addEventListener("click", () => {
+            // TODO: add in the code
+        })
+
+        this.el.reset.addEventListener("click", () => {
+            // TODO: add in the code
+        })
     }
+
+    updateInterfaceTime() {
+        const minutes = Math.floor(this.remainingSeconds / 60);
+        const seconds = this.remainingSeconds % 60;
+
+
+        this.el.minutes.textContent = minutes.toString().padStart(2, "0");
+        this.el.seconds.textContent = seconds.toString().padStart(2, "0");
+    }
+
+    updateInterfaceControl() {
+        if (this.interval === null) {
+            this.el.control.innerHTML = `<span class="material-icons-outlined">play_circle</span>`;
+            this.el.control.classList.add("timer__btn--start");
+            this.el.control.classList.remove("timer__btn--stop");
+        } else {
+            this.el.control.innerHTML = `<span class="material-icons-outlined">pause</span>`;
+            this.el.control.classList.add("timer__btn--stop");
+            this.el.control.classList.remove("timer__btn--start");
+        }
+
+    }
+
 
     static getHTML() {
         return `
